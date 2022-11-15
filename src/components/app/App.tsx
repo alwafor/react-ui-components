@@ -1,7 +1,7 @@
+import styles from './App.module.css';
+
 const App = () => {
-  return (
-    <div>Hello from initial commit!</div>
-  );
-}
+  return <div className={styles.container}>Hello from initial commit!</div>;
+};
 
 export default App;
