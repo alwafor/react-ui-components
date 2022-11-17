@@ -1,0 +1,17 @@
+.iconWrapper {
+  border-radius: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+}
+.blueCheck {
+  background-color: #e8edfb;
+}
+.grayCross {
+  background-color: #f7f8f9;
+}
