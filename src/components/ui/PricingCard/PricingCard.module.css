@@ -1,3 +1,48 @@
 .card {
-  
+  padding: 53px 32px;
+  border-radius: 16px;
+  /* background-color: #007aff; */
+
+  font-size: 18px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.description {
+  margin-top: 16px;
+
+  color: #505056;
+}
+.priceWrapper {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+}
+.price {
+  font-size: 56px;
+  font-family: 'Nunito';
+
+  margin-right: 10px;
+}
+.button {
+  padding: 12px 88px;
+  margin: 32px 0 52px 0;
+  border: 1px solid #007aff;
+  border-radius: 6px;
+  color: #007aff;
+  font-size: 22px;
+}
+
+.perTime {
+  color: #4b5768;
+}
+.itemsWrapper {
+}
+.item {
+}
+.itemStatus {
+}
+.itemText {
 }

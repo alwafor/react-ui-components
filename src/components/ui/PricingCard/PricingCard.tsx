@@ -1,3 +1,4 @@
+import StatusElement from './components/StatusElement';
 import styles from './PricingCard.module.css';
 
 interface Item {
@@ -34,19 +35,22 @@ const PricingCard = ({
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
       <div className={styles.priceWrapper}>
-        <div className={styles.price}>{price}</div>
+        <div className={styles.price}>${price}</div>
         <div className={styles.perTime}> / {perTime}</div>
       </div>
 
-      <button onClick={onClick}>{buttonText}</button>
+      <button className={styles.button} onClick={onClick}>
+        {buttonText}
+      </button>
 
       <div className={styles.itemsWrapper}>
-        {items.map((item) => (
+        <StatusElement iconVariant="blueCheck">Hello!</StatusElement>
+        {/* {items.map((item) => (
           <div key={item.text} className={styles.item}>
             <div className={styles.itemStatus}>{item.active ? '+' : '-'}</div>
             <div className={styles.itemText}>{item.text}</div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
