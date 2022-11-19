@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.element + .element {
+  margin-top: 16px;
+}
+
 .statusIcon {
   margin-right: 20px;
 }
