@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import StatusElement from './components/StatusElement';
 import { StatusIconVariant } from './components/StatusIcon';
 import styles from './PricingCard.module.css';
@@ -21,6 +22,8 @@ interface Props {
   onClick: (e: React.MouseEvent) => void;
 
   variant?: 'white' | 'blue';
+
+  className?: string;
 }
 
 const getIconVariantForCard = (
@@ -44,9 +47,10 @@ const PricingCard = ({
   buttonText = 'Get Started Now',
   onClick,
   variant = 'white',
+  className,
 }: Props) => {
   return (
-    <div className={styles.card}>
+    <div className={clsx(styles.card, className)}>
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
       <div className={styles.priceWrapper}>
