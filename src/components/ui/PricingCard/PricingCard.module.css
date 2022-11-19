@@ -27,9 +27,10 @@
   margin-right: 10px;
 }
 .button {
-  padding: 12px 88px;
+  width: 100%;
+  padding: 12px 0;
   margin: 32px 0 52px 0;
-  border: 1px solid #007aff;
+  border: 2px solid #007aff;
   border-radius: 6px;
   color: #007aff;
   font-size: 22px;

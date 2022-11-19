@@ -2,30 +2,8 @@ import clsx from 'clsx';
 import StatusElement from './components/StatusElement';
 import { StatusIconVariant } from './components/StatusIcon';
 import styles from './PricingCard.module.css';
-import globalStyles from './../../../assets/styles/Global.module.css';
-
-interface Item {
-  iconType: 'check' | 'cross';
-  text: string;
-  bold?: boolean;
-  gray?: boolean;
-}
-
-interface Props {
-  title: string;
-  description: string;
-  price: number;
-  perTime?: string;
-
-  items: Item[];
-
-  buttonText?: string;
-  onClick: (e: React.MouseEvent) => void;
-
-  variant?: 'white' | 'blue';
-
-  className?: string;
-}
+import globalStyles from 'src/assets/styles/Global.module.css';
+import { PricingCardProps } from './PricingCard.interfaces';
 
 const getIconVariantForCard = (
   cardVariant: 'white' | 'blue',
@@ -49,7 +27,7 @@ const PricingCard = ({
   onClick,
   variant = 'white',
   className,
-}: Props) => {
+}: PricingCardProps) => {
   return (
     <div className={clsx(styles.card, className)}>
       <div className={styles.title}>{title}</div>
