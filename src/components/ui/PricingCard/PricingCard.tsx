@@ -71,7 +71,7 @@ const PricingCard = ({
           >
             <span
               className={clsx(
-                item.bold && globalStyles.bold,
+                item.bold && globalStyles.medium,
                 item.gray && globalStyles.gray,
               )}
             >

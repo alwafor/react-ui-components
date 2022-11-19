@@ -2,6 +2,10 @@
   font-weight: bold;
 }
 
+.medium {
+  font-weight: 500;
+}
+
 .gray {
   color: #a0abbb;
 }
