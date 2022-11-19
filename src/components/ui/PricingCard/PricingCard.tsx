@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import StatusElement from './components/StatusElement';
 import { StatusIconVariant } from './components/StatusIcon';
 import styles from './PricingCard.module.css';
+import globalStyles from './../../../assets/styles/Global.module.css';
 
 interface Item {
   iconType: 'check' | 'cross';
@@ -68,7 +69,14 @@ const PricingCard = ({
             key={item.text}
             iconVariant={getIconVariantForCard(variant, item.iconType)}
           >
-            {item.text}
+            <span
+              className={clsx(
+                item.bold && globalStyles.bold,
+                item.gray && globalStyles.gray,
+              )}
+            >
+              {item.text}
+            </span>
           </StatusElement>
         ))}
       </div>
