@@ -1,9 +1,12 @@
 import StatusElement from './components/StatusElement';
+import { StatusIconVariant } from './components/StatusIcon';
 import styles from './PricingCard.module.css';
 
 interface Item {
-  active: boolean;
+  iconType: 'check' | 'cross';
   text: string;
+  bold?: boolean;
+  gray?: boolean;
 }
 
 interface Props {
@@ -19,6 +22,18 @@ interface Props {
 
   variant?: 'white' | 'blue';
 }
+
+const getIconVariantForCard = (
+  cardVariant: 'white' | 'blue',
+  iconType: 'check' | 'cross',
+) => {
+  if (cardVariant === 'blue') {
+    return ('white' + iconType[0] + iconType.slice(1)) as StatusIconVariant;
+  } else {
+    if (iconType === 'cross') return 'grayCross';
+    else return 'blueCheck';
+  }
+};
 
 const PricingCard = ({
   title,
@@ -44,13 +59,14 @@ const PricingCard = ({
       </button>
 
       <div className={styles.itemsWrapper}>
-        <StatusElement iconVariant="blueCheck">Hello!</StatusElement>
-        {/* {items.map((item) => (
-          <div key={item.text} className={styles.item}>
-            <div className={styles.itemStatus}>{item.active ? '+' : '-'}</div>
-            <div className={styles.itemText}>{item.text}</div>
-          </div>
-        ))} */}
+        {items.map((item) => (
+          <StatusElement
+            key={item.text}
+            iconVariant={getIconVariantForCard(variant, item.iconType)}
+          >
+            {item.text}
+          </StatusElement>
+        ))}
       </div>
     </div>
   );

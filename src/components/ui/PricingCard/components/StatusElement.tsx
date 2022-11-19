@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StatusIcon, StatusIconVariant } from './StatusIcon';
+import styles from './StatusElement.module.css';
 
 interface StatusElementProps {
   children: ReactNode;
@@ -8,8 +9,8 @@ interface StatusElementProps {
 
 const StatusElement = ({ children, iconVariant }: StatusElementProps) => {
   return (
-    <div>
-      <StatusIcon variant={iconVariant} />
+    <div className={styles.element}>
+      <StatusIcon className={styles.statusIcon} variant={iconVariant} />
       {children}
     </div>
   );

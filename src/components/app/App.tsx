@@ -6,7 +6,7 @@ const App = () => {
     <div className={styles.container}>
       <PricingCard
         description="some description"
-        items={[{ active: true, text: 'item' }]}
+        items={[{ iconType: 'check', text: 'item' }]}
         onClick={() => console.log('hello')}
         price={25}
         title="Professional"
