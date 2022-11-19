@@ -12,17 +12,22 @@ export type StatusIconVariant =
 
 export interface StatusIconProps {
   variant?: StatusIconVariant;
+  className?: string;
 }
 
 const classesToShow = ['blueCheck', 'grayCross'];
 
-export const StatusIcon = ({ variant = 'whiteCheck' }: StatusIconProps) => {
+export const StatusIcon = ({
+  className,
+  variant = 'whiteCheck',
+}: StatusIconProps) => {
   const icon = variant.endsWith('Cross') ? <IconCross /> : <IconCheck />;
 
   return (
     <div
       className={clsx(
         styles.iconWrapper,
+        className,
         classesToShow.includes(variant) && styles[variant],
       )}
     >
