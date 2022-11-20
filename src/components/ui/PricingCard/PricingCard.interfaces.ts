@@ -3,6 +3,7 @@ export interface PricingCardItem {
   text: string;
   bold?: boolean;
   gray?: boolean;
+  white?: boolean;
 }
 
 export interface PricingCardProps {

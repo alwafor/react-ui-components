@@ -10,12 +10,19 @@ const getIconVariantForCard = (
   iconType: 'check' | 'cross',
 ) => {
   if (cardVariant === 'blue') {
-    return ('white' + iconType[0] + iconType.slice(1)) as StatusIconVariant;
+    return ('white' + iconType[0].toUpperCase() + iconType.slice(1)) as StatusIconVariant;
   } else {
     if (iconType === 'cross') return 'grayCross';
     else return 'blueCheck';
   }
 };
+const getStyleVariant = (cardVariant: 'white' | 'blue', selectorStyle: string) => {
+  if (cardVariant === 'white') {
+    return selectorStyle ;
+  } else {
+    return (selectorStyle + cardVariant[0].toUpperCase() + cardVariant.slice(1))
+  }
+}
 
 const PricingCard = ({
   title,
@@ -29,19 +36,19 @@ const PricingCard = ({
   className,
 }: PricingCardProps) => {
   return (
-    <div className={clsx(styles.card, className)}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.description}>{description}</div>
+    <div className={clsx(styles[getStyleVariant(variant, 'card')], className)}>
+      <div className={styles[getStyleVariant(variant, 'title')]}>{title}</div>
+      <div className={styles[getStyleVariant(variant, 'description')]}>{description}</div>
       <div className={styles.priceWrapper}>
-        <div className={styles.price}>${price}</div>
-        <div className={styles.perTime}> / {perTime}</div>
+        <div className={styles[getStyleVariant(variant, 'price')]}>${price}</div>
+        <div className={styles[getStyleVariant(variant, 'perTime')]}> / {perTime}</div>
       </div>
 
       <button className={styles.button} onClick={onClick}>
         {buttonText}
       </button>
 
-      <div className={styles.itemsWrapper}>
+      <div className={clsx(styles.itemsWrapper)}>
         {items.map((item) => (
           <StatusElement
             key={item.text}
@@ -51,6 +58,7 @@ const PricingCard = ({
               className={clsx(
                 item.bold && globalStyles.medium,
                 item.gray && globalStyles.gray,
+                item.white && globalStyles.white,
               )}
             >
               {item.text}
