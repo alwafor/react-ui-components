@@ -5,3 +5,9 @@
 .middleCard {
   margin: 0 15px;
 }
+@media (max-width: 900px) {
+  .wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
