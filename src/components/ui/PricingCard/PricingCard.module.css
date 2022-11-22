@@ -5,14 +5,35 @@
 
   font-size: 18px;
 }
+.cardBlue {
+  padding: 53px 32px;
+  border-radius: 16px;
+  background-color: #007aff;
+
+  font-size: 18px;
+}
+.cardBlue * {
+  color: white;
+}
 .title {
   font-size: 24px;
   font-weight: bold;
 }
+.titleBlue {
+  font-size: 24px;
+  font-weight: normal;
+  color: #fff;
+}
 .description {
   margin-top: 16px;
-
+  line-height: 155%;
   color: #505056;
+}
+.descriptionBlue {
+  margin-top: 16px;
+  padding-bottom: 20px;
+  color: #f7f8f9;
+  line-height: 155%;
 }
 .priceWrapper {
   margin-top: 25px;
@@ -21,6 +42,12 @@
   align-items: center;
 }
 .price {
+  font-size: 56px;
+  font-family: 'Nunito';
+
+  margin-right: 10px;
+}
+.priceBlue {
   font-size: 56px;
   font-family: 'Nunito';
 
@@ -36,7 +63,12 @@
   font-size: 22px;
   background-color: #fff;
 }
+.itemsWrapper {
+}
 
 .perTime {
   color: #4b5768;
+}
+.elementSpan {
+  line-height: 150%;
 }
