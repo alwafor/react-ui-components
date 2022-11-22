@@ -1,6 +1,10 @@
 import React from 'react';
 import PricingCard from 'src/components/ui/PricingCard';
-import { cardsItems, cardsItems2, cardsItems3} from './PageWithPricingCard.constants';
+import {
+  cardsItems,
+  cardsItems2,
+  cardsItems3,
+} from './PageWithPricingCard.constants';
 import styles from './PageWithPricingCards.module.css';
 
 const PageWithPricingCards = () => {
@@ -14,7 +18,8 @@ const PageWithPricingCards = () => {
         title="Freebie"
       />
       <PricingCard
-        variant='blue'
+        className={styles.middleCard}
+        variant="blue"
         description="Amet minim mollit non deserunt ullamco est sit aliqua dolor."
         items={cardsItems2}
         onClick={() => console.log('hello')}

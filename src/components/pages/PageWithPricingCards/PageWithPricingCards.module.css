@@ -1,3 +1,7 @@
 .wrapper {
+  margin-top: 19px;
   display: flex;
+}
+.middleCard {
+  margin: 0 15px;
 }
